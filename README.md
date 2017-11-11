@@ -37,3 +37,17 @@ Edit /etc/ssh/sshd_config
 ```bash
 PermitRootLogin yes
 ```
+
+### 6. Run graphical applications without a display
+
+```bash
+apt-get install xvfb
+Xvfb :99 &
+export DISPLAY=:99
+```
+
+or
+
+```bash
+xvfb-run <cmd>
+```

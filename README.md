@@ -25,7 +25,15 @@ Edit /etc/network/interfaces
 ```bash
 auto enp0s3
 iface enp0s3 inet static
-  address 10.0.2.15
+	address 10.0.2.15
 	netmask 255.255.255.0
 	gateway 10.0.2.2
+```
+
+### 5. Allow root login via ssh
+
+Edit /etc/ssh/sshd_config
+
+```bash
+PermitRootLogin yes
 ```

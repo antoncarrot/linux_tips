@@ -57,3 +57,12 @@ xvfb-run <cmd>
 yum check-update
 yum update
 ```
+
+### Docker update container
+```bash
+docker ps
+docker stop <ID>
+docker rm <ID>
+docker pull <name>
+docker run ...
+```

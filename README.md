@@ -1,24 +1,24 @@
 # Linux tips
 
-### 1. Set init level 3
+### Set init level 3
 
 ```bash
 systemctl set-default runlevel3.target
 ```
 
-### 2. Show net interfaces
+### Show net interfaces
 
 ```bash
 ip link show
 ```
 
-### 3. Install ifconfig
+### Install ifconfig
 
 ```bash
 apt-get install net-tools
 ```
 
-### 4. Set interfaces manualy
+### Set interfaces manualy
 
 Edit /etc/network/interfaces
 
@@ -30,7 +30,7 @@ iface enp0s3 inet static
 	gateway 10.0.2.2
 ```
 
-### 5. Allow root login via ssh
+### Allow root login via ssh
 
 Edit /etc/ssh/sshd_config
 
@@ -38,7 +38,7 @@ Edit /etc/ssh/sshd_config
 PermitRootLogin yes
 ```
 
-### 6. Run graphical applications without a display
+### Run graphical applications without a display
 
 ```bash
 apt-get install xvfb
@@ -50,4 +50,10 @@ or
 
 ```bash
 xvfb-run <cmd>
+```
+
+### CentOS update
+```bash
+yum check-update
+yum update
 ```

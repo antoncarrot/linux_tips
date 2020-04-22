@@ -66,3 +66,39 @@ docker rm <ID>
 docker pull <name>
 docker run ...
 ```
+
+### Monitor wakes up immediately after suspend
+
+Disable monitor auto select input source
+
+### Restart bluetooth and monitors after suspend
+
+Create scripts in /lib/systemd/system-sleep/
+
+```bash
+#!/bin/bash
+
+if [ "${1}" == "post" ]; then
+sleep 1
+/usr/bin/systemctl stop bluetooth.service
+sleep 2
+/usr/bin/systemctl start bluetooth.service
+fi
+
+exit 0
+```
+
+```bash
+#!/bin/bash
+
+if [ "${1}" == "post" ]; then
+export XAUTHORITY="/var/run/lightdm/root/:0"
+export DISPLAY=":0"
+sleep 1
+xset dpms force standby
+sleep 2
+xset dpms force on
+fi
+
+exit 0
+```

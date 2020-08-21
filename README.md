@@ -114,3 +114,9 @@ mitigations=off
 ```
 sudo update-grub
 ```
+
+### Mint snapd
+
+```
+sudo rm /etc/apt/preferences.d/nosnap.pref
+```

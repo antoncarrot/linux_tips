@@ -102,3 +102,15 @@ fi
 
 exit 0
 ```
+
+### GRUB
+
+/etc/default/grub
+
+```
+mitigations=off
+```
+
+```
+sudo update-grub
+```

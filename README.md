@@ -1,5 +1,12 @@
 # Linux tips
 
+### Set file and dir chmod
+
+```
+find . -type d -exec chmod 755 {} \;
+find . -type f -exec chmod 644 {} \;
+```
+
 ### Set init level 3
 
 ```bash
@@ -107,6 +114,8 @@ exit 0
 
 /etc/default/grub
 
+add to GRUB_CMDLINE_LINUX_DEFAULT=
+
 ```
 mitigations=off
 ```
@@ -119,4 +128,62 @@ sudo update-grub
 
 ```
 sudo rm /etc/apt/preferences.d/nosnap.pref
+```
+
+### Mint del unused
+
+```
+sudo apt-get purge thunderbird warpinator onboard onboard-common gnote pix pix-data drawing hexchat hexchat-common webapp-manager celluloid hypnotix rhythmbox rhythmbox-data
+```
+
+### VPNC
+
+```
+sudo apt-get install network-manager-vpnc-gnome
+```
+
+### DNS for vpn
+
+```
+sudo vim /etc/NetworkManager/system-connections/<name>.nmconnection
+```
+
+```
+dns-search=~.
+```
+
+### DNS status
+
+```
+resolvectl dns
+
+systemd-resolve --status
+```
+
+### Cinnamon unset ctrl alt shift up
+
+```
+gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-up []
+gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-down []
+```
+
+### ssh port forward
+
+```
+ssh -X -L 1433:127.0.0.1:1433 -L 1521:127.0.0.1:1521 <user>@<host> -p <port>
+```
+
+### docker ssl error
+
+```
+sudo vim /etc/systemd/system/docker.service.d/env.conf
+```
+
+```
+[Service]
+Environment="GODEBUG=x509ignoreCN=0"
+```
+
+```
+sudo systemctl show --property=Environment docker
 ```

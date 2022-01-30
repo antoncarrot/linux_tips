@@ -1,5 +1,13 @@
 # Linux tips
 
+### Firefox about:config
+
+```
+browser.sessionstore.interval	120000
+mousewheel.acceleration.start	1
+mousewheel.acceleration.factor	2
+```
+
 ### Set file and dir chmod
 
 ```
@@ -57,21 +65,6 @@ or
 
 ```bash
 xvfb-run <cmd>
-```
-
-### CentOS update
-```bash
-yum check-update
-yum update
-```
-
-### Docker update container
-```bash
-docker ps
-docker stop <ID>
-docker rm <ID>
-docker pull <name>
-docker run ...
 ```
 
 ### Monitor wakes up immediately after suspend

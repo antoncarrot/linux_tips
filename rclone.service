@@ -1,0 +1,14 @@
+[Unit]
+Description=Syncing local files with Google Drive using rclone bisync
+Documentation=man:rclone(1)
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=1
+
+[Service]
+Type=oneshot
+ExecStart=rclone bisync gdrive: %h/gdrive/ -MvP --compare size,modtime,checksum --conflict-resolve newer --conflict-loser delete --recover
+
+[Install]
+WantedBy=default.target

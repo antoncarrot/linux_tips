@@ -1,0 +1,7 @@
+[Path]
+Unit=rclone.service
+PathChanged=%h/gdrive
+# trigger on changes to a file not just create/delete
+
+[Install]
+WantedBy=default.target

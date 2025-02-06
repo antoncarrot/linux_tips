@@ -8,6 +8,18 @@ mousewheel.acceleration.start	1
 mousewheel.acceleration.factor	2
 ```
 
+### Gnome disable Meta hotkey
+
+```
+gsettings set org.gnome.mutter overlay-key ''
+```
+
+### VPN fix ssl error
+
+```
+sudo update-crypto-policies --set LEGACY
+```
+
 ### Set file and dir chmod
 
 ```
@@ -115,6 +127,10 @@ mitigations=off
 
 ```
 sudo update-grub
+```
+
+```
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 ### Mint snapd

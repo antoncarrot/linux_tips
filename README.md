@@ -10,7 +10,7 @@ mousewheel.acceleration.factor	2
 
 ### Gnome disable Meta hotkey
 
-```
+```bash
 gsettings set org.gnome.mutter overlay-key ''
 ```
 

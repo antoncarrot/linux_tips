@@ -8,7 +8,7 @@ StartLimitBurst=1
 
 [Service]
 Type=oneshot
-ExecStart=rclone bisync gdrive: %h/gdrive/ -MvP --compare size,modtime,checksum --conflict-resolve newer --conflict-loser delete --recover && notify-send -u normal -t 1000 -a "rclone" "Syncing files with Google Drive done"
+ExecStart=%h/my/linux_tips/rclone.py %h/gdrive/
 
 [Install]
 WantedBy=default.target
